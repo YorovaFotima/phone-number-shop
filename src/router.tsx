@@ -14,15 +14,15 @@ const router = createBrowserRouter([
             element:<ListNumbers/>
         },
         {
-            path : "/AddNumbers",
+            path : "/add numbers",
             element:<AddNumber/>
         },
         {
-            path : "/DetailedInformation",
+            path : "/detailed information",
             element:<DetailedInformation/>
         },
         {
-            path : "/EditNumber",
+            path : "/edit number",
             element:<EditNumber/>
         }
     ]

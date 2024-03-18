@@ -1,17 +1,7 @@
 import  { useState, FormEvent } from 'react';
 import './AddNumber.css';
-
+import { PhoneDto } from "./types/types";
 type PhoneCategory = 'Platinum' | 'Gold' | 'Silver';
-
-interface AddPhoneDto {
-  id: number;
-  phoneNumber: string;
-  price: string;
-  ownerName: string;
-  category: PhoneCategory;
-  description: string;
-}
-
 
 function AddNumber() {
   const [phoneNumber, setPhoneNumber] = useState<string>('');
@@ -23,9 +13,9 @@ function AddNumber() {
   const [successPopupVisible, setSuccessPopupVisible] = useState<boolean>(false);
   const [failPopupVisible, setFailPopupVisible] = useState<boolean>(false);
 
-  const saveNumberToLocalStorage = (phoneData: AddPhoneDto) => {
+  const saveNumberToLocalStorage = (phoneData: PhoneDto) => {
     const existingNumbersJson = localStorage.getItem('phoneNumbers');
-    const existingNumbers: AddPhoneDto[] = existingNumbersJson ? JSON.parse(existingNumbersJson) : [];
+    const existingNumbers: PhoneDto[] = existingNumbersJson ? JSON.parse(existingNumbersJson) : [];
     const updatedNumbers = [...existingNumbers, phoneData];
     localStorage.setItem('phoneNumbers', JSON.stringify(updatedNumbers));
   };
@@ -34,7 +24,7 @@ function AddNumber() {
     event.preventDefault();
 
     if (phoneNumber && price && ownerName && category && description) {
-      const newPhoneData: AddPhoneDto = {
+      const newPhoneData: PhoneDto = {
         id: Date.now(),
         phoneNumber,
         price,
