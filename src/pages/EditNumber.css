@@ -1,0 +1,51 @@
+.edit-number-container {
+    max-width: 800px; /* Установите предпочтительную максимальную ширину */
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #333; 
+    margin-bottom: 30px; 
+    text-align: left; 
+  }
+  
+  .label {
+    font-size: 18px; 
+    color: #333; 
+    margin-bottom: 8px; 
+    display: block; 
+  }
+  
+  .text-input,
+  .select-input,
+  .textarea-input {
+    width: 100%; 
+    padding: 15px; 
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px; 
+    margin-bottom: 20px; 
+    background-color: white; 
+    color: #333;
+  }
+  
+  .button-submit {
+    width: 80%;
+    padding: 15px; 
+    font-size: 18px; 
+    border-radius: 4px; 
+    margin-top: 20px; 
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  .button-submit:hover {
+    background-color: #0056b3; 
+  }
+  

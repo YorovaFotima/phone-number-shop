@@ -1,5 +1,5 @@
 import "./menu.css";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 
 function Menu() {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ function Menu() {
           {location.pathname === "/" ? (
             <button
               className="add-button"
-              onClick={() => navigate("/add numbers")}
+              onClick={() => navigate("/add-numbers")}
             >
               Add Number
             </button>
@@ -29,9 +29,6 @@ function Menu() {
               Back
             </button>
           )}
-        </li>
-        <li>
-          <Link to="/detailed information">Questions</Link>
         </li>
       </ul>
     </div>
