@@ -5,13 +5,9 @@
     align-items: center;
     height: 80px;
     width: 100%;
-    background-color: rgb(57, 57, 60);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: rgb(57, 57, 60);;
+    box-shadow: 2px 2px 4pxr gba(0, 0, 0, 0.2);
     
-}
-.menu1 a{
-    color: rgb(255, 255, 255);
-    margin-right: 20px;
 }
 
 .menu1 h2{

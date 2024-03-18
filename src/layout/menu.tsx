@@ -1,18 +1,9 @@
-import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import "./menu.css";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 function Menu() {
-  const [nextPath, setNextPath] = useState('/');
   const navigate = useNavigate();
   const location = useLocation();
-
-  useEffect(() => {
-    if (location.pathname === '/') {
-      setNextPath('/AddNumbers');
-    } else {
-      setNextPath('/');
-    }
-  }, [location]);
 
   return (
     <div>
@@ -26,9 +17,21 @@ function Menu() {
         }}
       >
         <li>
-          <button onClick={() => navigate(nextPath)}>
-            {location.pathname === '/' ? "AddNumbers" : "Go Back"}
-          </button>
+          {location.pathname === "/" ? (
+            <button
+              className="add-button"
+              onClick={() => navigate("/AddNumbers")}
+            >
+              Add Number
+            </button>
+          ) : (
+            <button className="add-button" onClick={() => navigate(-1)}>
+              Back
+            </button>
+          )}
+        </li>
+        <li>
+          <Link to="/DetailedInformation">Questions</Link>
         </li>
       </ul>
     </div>

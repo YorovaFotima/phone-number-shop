@@ -9,7 +9,7 @@ function Layout() {
       <Header />
       <main style={{
         backgroundColor: "white",
-        height: `calc(100vh - 100px)`
+        height: `calc(100vh - 150px)`
       }}>
 
         <Outlet />
