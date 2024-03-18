@@ -5,7 +5,6 @@
   }
   
   .phone-numbers-list {
-    background-color: white; 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -21,20 +20,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white; 
   }
   
   .phone-category-badge {
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: bold;
-    color: #fff;
-    align-self: flex-end; /* Выравниваем по левому краю */
+    color: #000000;
+    align-self: flex-end; 
+    font-size: 0.8em;
   }
-  
-  .gold { background-color: #ffd700; }
-  .silver { background-color: #c0c0c0; }
-  .bronze { background-color: #cd7f32; }
-  .platinum { background-color: #e5e4e2; }
+    .phone-category-badge.gold { background-color: #fedb11; }
+    .phone-category-badge.silver { background-color: #d5d4d4; }
+    .phone-category-badge.platinum { background-color: #f1a816; }
+
   
   .phone-info {
     display: flex;
@@ -45,8 +45,9 @@
   }
   
   .phone-number {
-    font-size: 1.2em;
+    font-size: 1.6em;
     margin: 5px 0;
+    text-decoration: underline;
   }
   
   .phone-price {
