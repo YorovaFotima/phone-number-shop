@@ -1,7 +1,10 @@
-
-import React from 'react';
+import './EditNumber.css'
 function EditNumber() {
-    return <>EditNumber</>;
+    return(
+      <div className="main_container">
+        
+      </div>
+    );
   }
   
   export { EditNumber };

@@ -1,6 +1,19 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Menu() {
+  const [nextPath, setNextPath] = useState('/');
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setNextPath('/AddNumbers');
+    } else {
+      setNextPath('/');
+    }
+  }, [location]);
+
   return (
     <div>
       <ul
@@ -10,22 +23,13 @@ function Menu() {
           gap: "10px",
           marginTop: "20px",
           listStyle: "none",
-          // backgroundColor : "rgb(186, 153, 133)",
         }}
       >
         <li>
-        <Link to="/">ListNumbers</Link>
+          <button onClick={() => navigate(nextPath)}>
+            {location.pathname === '/' ? "AddNumbers" : "Go Back"}
+          </button>
         </li>
-        <li>
-          <Link to="/AddNumbers">AddNumbers</Link>
-        </li>
-        <li>
-          <Link to="/DetailedInformation">DetailedInformation</Link>
-        </li>
-        <li>
-          <Link to="/EditNumber">EditNumber</Link>
-        </li>
-       
       </ul>
     </div>
   );

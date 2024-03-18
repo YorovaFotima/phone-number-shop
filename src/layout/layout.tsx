@@ -1,12 +1,22 @@
 
 import { Outlet } from 'react-router-dom';
 import { Menu } from './menu'; 
+import { Footer } from "./footer";
+import { Header } from "./header";
+
 function Layout() {
   return (
-    <div>
-      <Menu />
-      <Outlet />
-    </div>
+    <>
+      <Header />
+      <main style={{
+        backgroundColor: "white",
+        height: `calc(100vh - 100px)`
+      }}>
+
+        <Outlet />
+      </main>
+      <Footer />
+    </>
   );
 }
 
