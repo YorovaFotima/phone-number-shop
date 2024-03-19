@@ -40,10 +40,10 @@ function ListNumbers() {
             <div className="phone-controls">
               <div className="phone-price">${phone.price}</div>
               <button className="view-details-button" onClick={() => viewDetails(phone.id)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-                <FiEye size={20} color="blue" />
+                <FiEye size={20} color="red" />
               </button>
               <button className="delete-button" onClick={() => deletePhoneNumber(phone.id)}>
-                <FiTrash2 size={20} color="red" />
+                <FiTrash2 size={20} color="black" />
               </button>
             </div>
           </div>
