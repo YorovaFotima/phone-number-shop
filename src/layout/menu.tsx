@@ -20,7 +20,7 @@ function Menu() {
           {location.pathname === "/" ? (
             <button
               className="add-button"
-              onClick={() => navigate("/AddNumbers")}
+              onClick={() => navigate("/add numbers")}
             >
               Add Number
             </button>
@@ -31,7 +31,7 @@ function Menu() {
           )}
         </li>
         <li>
-          <Link to="/DetailedInformation">Questions</Link>
+          <Link to="/detailed information">Questions</Link>
         </li>
       </ul>
     </div>

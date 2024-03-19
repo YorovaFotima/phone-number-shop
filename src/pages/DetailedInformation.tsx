@@ -1,7 +1,7 @@
 import "./DetailedInformation.css";
 function DetailedInformation() {
   const handleEditClick = () => {
-    window.location.href = '/EditNumber'; 
+    window.location.href = '/edit number'; 
   };
 
   return (

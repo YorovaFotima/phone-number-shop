@@ -30,7 +30,7 @@ function ListNumbers() {
             <div className="phone-number">{phone.phoneNumber}</div>
             <div className="phone-controls">
               <div className="phone-price">${phone.price}</div>
-              <Link to="/DetailedInformation" className="edit-button"> {/* Используйте Link для навигации */}
+              <Link to="/detailed information" className="edit-button">
                 <FiEye size={20} color="blue" />
               </Link>
               <button className="delete-button" onClick={() => deletePhoneNumber(phone.id)}>
