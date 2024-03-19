@@ -15,7 +15,7 @@
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #1b4bf6;
+  background-color: #c7ed0c;
   color: white;
   border: none;
   border-radius: 4px;
@@ -24,7 +24,7 @@
 }
 
 .main_container button {
-  background-color: #2ad2fc;
+  background-color: #eef112;
 }
 .phone-numbers-container {
   max-width: 1200px;
