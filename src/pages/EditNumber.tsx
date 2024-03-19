@@ -58,14 +58,15 @@ function EditNumber() {
 
       updateNumberInLocalStorage(updatedPhoneData);
       setSuccessPopupVisible(true);
+  
       setTimeout(() => {
         navigate('/'); 
-      }, 3000); 
+      }, 1000); 
     } else {
       setFailPopupVisible(true);
       setTimeout(() => {
         setFailPopupVisible(false);
-      }, 7000); 
+      }, 1000); 
     }
   };
 
