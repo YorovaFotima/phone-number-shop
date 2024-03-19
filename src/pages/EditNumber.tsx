@@ -1,7 +1,7 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './EditNumber.css'; 
-import { PhoneDto } from "./types/types";
+import { PhoneDto } from "../types/types";
 
 type PhoneCategory = 'Platinum' | 'Gold' | 'Silver';
 

@@ -1,23 +1,27 @@
-import  { useState, FormEvent } from 'react';
-import './AddNumber.css';
-import { PhoneDto } from "./types/types";
-type PhoneCategory = 'Platinum' | 'Gold' | 'Silver';
+import { useState, FormEvent } from "react";
+import "./AddNumber.css";
+import { PhoneDto } from "../types/types";
+
+type PhoneCategory = "Platinum" | "Gold" | "Silver";
 
 function AddNumber() {
-  const [phoneNumber, setPhoneNumber] = useState<string>('');
-  const [price, setPrice] = useState<string>('');
-  const [ownerName, setOwnerName] = useState<string>('');
-  const [category, setCategory] = useState<PhoneCategory>('Platinum');
-  const [description, setDescription] = useState<string>('');
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [price, setPrice] = useState<string>("");
+  const [ownerName, setOwnerName] = useState<string>("");
+  const [category, setCategory] = useState<PhoneCategory>("Platinum");
+  const [description, setDescription] = useState<string>("");
 
-  const [successPopupVisible, setSuccessPopupVisible] = useState<boolean>(false);
+  const [successPopupVisible, setSuccessPopupVisible] =
+    useState<boolean>(false);
   const [failPopupVisible, setFailPopupVisible] = useState<boolean>(false);
 
   const saveNumberToLocalStorage = (phoneData: PhoneDto) => {
-    const existingNumbersJson = localStorage.getItem('phoneNumbers');
-    const existingNumbers: PhoneDto[] = existingNumbersJson ? JSON.parse(existingNumbersJson) : [];
+    const existingNumbersJson = localStorage.getItem("phoneNumbers");
+    const existingNumbers: PhoneDto[] = existingNumbersJson
+      ? JSON.parse(existingNumbersJson)
+      : [];
     const updatedNumbers = [...existingNumbers, phoneData];
-    localStorage.setItem('phoneNumbers', JSON.stringify(updatedNumbers));
+    localStorage.setItem("phoneNumbers", JSON.stringify(updatedNumbers));
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -36,11 +40,11 @@ function AddNumber() {
       saveNumberToLocalStorage(newPhoneData);
       setSuccessPopupVisible(true);
 
-      setPhoneNumber('');
-      setPrice('');
-      setOwnerName('');
-      setCategory('Platinum');
-      setDescription('');
+      setPhoneNumber("");
+      setPrice("");
+      setOwnerName("");
+      setCategory("Platinum");
+      setDescription("");
 
       setTimeout(() => {
         setSuccessPopupVisible(false);
@@ -99,11 +103,19 @@ function AddNumber() {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <button type="submit" className="button-submit">Add Number</button>
+        <button type="submit" className="button-submit">
+          Add Number
+        </button>
       </form>
 
-      {successPopupVisible && <div className="popup-success">Number successfully added!</div>}
-      {failPopupVisible && <div className="popup-fail">Failed to add number. Please check your inputs.</div>}
+      {successPopupVisible && (
+        <div className="popup-success">Number successfully added!</div>
+      )}
+      {failPopupVisible && (
+        <div className="popup-fail">
+          Failed to add number. Please check your inputs.
+        </div>
+      )}
     </div>
   );
 }

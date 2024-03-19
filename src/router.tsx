@@ -1,33 +1,38 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Layout } from "./layout/layout";
 import { AddNumber } from "./pages/AddNumbers";
 import { DetailedInformation } from "./pages/DetailedInformation";
 import { EditNumber } from "./pages/EditNumber";
 import { ListNumbers } from "./pages/ListNumbers";
+import { Layout } from "./layout";
+
 const router = createBrowserRouter([
-    {
-        path: "/",
+  {
+    path: "/",
     element: <Layout />,
     children: [
-        {
-            path : "/",
-            element:<ListNumbers/>
-        },
-        {
-            path : "/add-numbers",
-            element:<AddNumber/>
-        },
-        {
-            path : "/detailed-information",
-            element:<DetailedInformation/>
-        },
-        {
-            path : "/edit-number",
-            element:<EditNumber/>
-        }
-    ]
+      {
+        path: "/",
+        element: <ListNumbers />,
+      },
+      {
+        path: "/add-numbers",
+        element: <AddNumber />,
+      },
+      {
+        path: "/detailed-information",
+        element: <DetailedInformation />,
+      },
+      {
+        // locahost:3000/numbers/dfasdf23r243r424
+        path: "/numbers/:id",
+        element: <DetailedInformation />,
+      },
+      {
+        path: "/edit-number",
+        element: <EditNumber />,
+      },
+    ],
+  },
+]);
 
-    }
-])
-
-export {router}
+export { router };

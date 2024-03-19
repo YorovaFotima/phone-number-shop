@@ -1,25 +1,34 @@
 import { useEffect, useState } from "react";
-import {  useNavigate } from "react-router-dom";
-import { PhoneDto } from "./types/types";
+import { useNavigate, useParams } from "react-router-dom";
+import { PhoneDto } from "../types/types";
 import "./DetailedInformation.css";
 
 function DetailedInformation() {
   const [phoneDetails, setPhoneDetails] = useState<PhoneDto | null>(null);
   const navigate = useNavigate();
 
-  useEffect(() => {  const currentPhoneId = JSON.parse(localStorage.getItem("currentPhoneId") || "null");
-  const phoneNumbers = JSON.parse(localStorage.getItem("phoneNumbers") || "[]");
-  
-  const phoneDetail = phoneNumbers.find((phone: PhoneDto) => phone.id === currentPhoneId);
-  if (phoneDetail) {
-    setPhoneDetails(phoneDetail);
-  } else {
-    navigate('/');
-  }
-}, [navigate]);
+  const { id } = useParams();
 
-if (!phoneDetails) {
-  return <div>Loading...</div>;
+  useEffect(() => {
+    if (id) {
+      const phoneNumbers = JSON.parse(
+        localStorage.getItem("phoneNumbers") || "[]"
+      );
+
+      const phoneDetail = phoneNumbers.find(
+        (phone: PhoneDto) => phone.id === +id
+      );
+
+      if (phoneDetail) {
+        setPhoneDetails(phoneDetail);
+      } else {
+        navigate("/");
+      }
+    }
+  }, [navigate, id]);
+
+  if (!phoneDetails) {
+    return <div>Loading...</div>;
   }
 
   const handleEditClick = () => {
@@ -34,7 +43,9 @@ if (!phoneDetails) {
       <span>Owner: {phoneDetails.ownerName}</span>
       <span>Category: {phoneDetails.category}</span>
       <span>Description: {phoneDetails.description}</span>
-      <button className="edit-button" onClick={handleEditClick}>Edit</button>
+      <button className="edit-button" onClick={handleEditClick}>
+        Edit
+      </button>
     </div>
   );
 }
