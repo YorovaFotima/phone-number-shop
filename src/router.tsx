@@ -5,6 +5,7 @@ import { EditNumber } from "./pages/EditNumber";
 import { ListNumbers } from "./pages/ListNumbers";
 import { Layout } from "./layout";
 import { ProductsPage } from "./pages/Products";
+import { CreditsPage } from "./pages/Credits";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <ProductsPage />,
+      },
+      {
+        path: "/credits",
+        element: <CreditsPage />,
       },
     ],
   },

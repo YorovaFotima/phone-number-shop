@@ -30,6 +30,9 @@ function Menu() {
             </button>
           )}
           <Link to="/products">Products</Link>
+          <Link to="/credits" style={{ color: "#fff" }}>
+            Кредиты
+          </Link>
         </li>
       </ul>
     </div>
