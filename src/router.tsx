@@ -4,6 +4,7 @@ import { DetailedInformation } from "./pages/DetailedInformation";
 import { EditNumber } from "./pages/EditNumber";
 import { ListNumbers } from "./pages/ListNumbers";
 import { Layout } from "./layout";
+import { ProductsPage } from "./pages/Products";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/edit-number",
         element: <EditNumber />,
+      },
+      {
+        path: "/products",
+        element: <ProductsPage />,
       },
     ],
   },

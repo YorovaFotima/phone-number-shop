@@ -1,5 +1,5 @@
 import "./menu.css";
-import { useLocation, useNavigate} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Menu() {
   const navigate = useNavigate();
@@ -29,6 +29,7 @@ function Menu() {
               Back
             </button>
           )}
+          <Link to="/products">Products</Link>
         </li>
       </ul>
     </div>
