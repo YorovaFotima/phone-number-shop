@@ -9,6 +9,9 @@ function ProductsPage() {
   const [products,setproducts] = useState([]);
   console.log(products);
   
+async function handleAddClick() {
+  
+}
   return (
     <div>
       <h1>Products</h1>
@@ -37,6 +40,9 @@ function ProductsPage() {
           ))}
         </tbody>
       </table>
+      <button onClick={handleAddClick} style={{ padding: "10px", backgroundColor: "green", "color": "white"} }>
+
+      </button>
     </div>
   );
 }
